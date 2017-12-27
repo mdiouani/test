@@ -18,9 +18,14 @@ pipeline {
         sh ' echo \'========= Build stage ==========\''
       }
     }
+    stage('Test') {
+      steps {
+        sh 'echo \'test\''
+      }
+    }
     stage('Deploy') {
       steps {
-        sh 'echo \'========= Deploy stage ==========\''
+        echo '========= Deploy stage =========='
       }
     }
   }
