@@ -3,60 +3,25 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh '''stages {
-        stage(\'Checkout\') {
-            steps {
+        sh '''
                 echo \'========= Checkout stage ==========\'
 
 
 
 
                 
-            }
-        }'''
-        }
+            '''
       }
-      stage('Message') {
-        steps {
-          sh '''echo \'Do you wish to install this program?\'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-        }
+    }
+    stage('Build') {
+      steps {
+        sh ' echo \'========= Build stage ==========\''
       }
-      stage('Choice') {
-        agent any
-        steps {
-          sh 'ping -c 3 localhost'
-        }
-      }
-      stage('error') {
-        steps {
-          sh '''echo \'Do you wish to install this program?\'
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) make echo \'install\'; break;;
-        No ) echo \'no install\';;
-    esac
-done'''
-        }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'echo \'========= Deploy stage ==========\''
       }
     }
   }
+}
