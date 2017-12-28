@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Maintainers') {
           steps {
-            build(job: 'maintainers', quietPeriod: 1)
+            build 'maintainers'
           }
         }
       }
