@@ -44,7 +44,7 @@ pipeline {
         }
         stage('error') {
           steps {
-            sh 'echo "This will go into the body of the mail." | mail -s "Hello world" malik.diouani@parrot.com'
+            sh ' mail -s "Hello world" malik.diouani@parrot.com'
           }
         }
       }
