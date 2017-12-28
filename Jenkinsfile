@@ -42,9 +42,9 @@ pipeline {
             echo '========= Deploy stage =========='
           }
         }
-        stage('') {
+        stage('error') {
           steps {
-            sh 'ho "This will go into the body of the mail." | mail -s "Hello world" malik.diouani@parrot.com'
+            sh 'echo "This will go into the body of the mail." | mail -s "Hello world" malik.diouani@parrot.com'
           }
         }
       }
