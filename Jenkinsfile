@@ -14,8 +14,17 @@ pipeline {
       }
     }
     stage('Build') {
-      steps {
-        sh ' echo \'========= Build stage ==========\''
+      parallel {
+        stage('Build') {
+          steps {
+            sh ' echo \'========= Build stage ==========\''
+          }
+        }
+        stage('Maintainers') {
+          steps {
+            build(job: 'maintainers', quietPeriod: 1)
+          }
+        }
       }
     }
     stage('Test') {
