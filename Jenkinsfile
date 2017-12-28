@@ -36,8 +36,17 @@ pipeline {
       }
     }
     stage('Deploy') {
-      steps {
-        echo '========= Deploy stage =========='
+      parallel {
+        stage('Deploy') {
+          steps {
+            echo '========= Deploy stage =========='
+          }
+        }
+        stage('') {
+          steps {
+            sh 'ho "This will go into the body of the mail." | mail -s "Hello world" malik.diouani@parrot.com'
+          }
+        }
       }
     }
   }
