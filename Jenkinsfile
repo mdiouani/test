@@ -42,9 +42,9 @@ pipeline {
             echo '========= Deploy stage =========='
           }
         }
-        stage('error') {
+        stage('send a mail') {
           steps {
-            sh ' mail -s "Hello world" malik.diouani@parrot.com'
+            mail(body: 'This will go into the body of the mail.', subject: 'Test mail in blue ocean pipeline', from: 'malik.diouani@parrot.com', to: 'malik.diouani@parrot.com')
           }
         }
       }
