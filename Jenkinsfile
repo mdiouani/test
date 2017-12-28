@@ -23,6 +23,7 @@ pipeline {
         stage('Maintainers') {
           steps {
             build 'maintainers'
+            input '"Proceed"'
           }
         }
       }
