@@ -1,11 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:6-alpine'
-      args '-p 50000:50000'
-    }
-    
-  }
+  agent none
   stages {
     stage('Checkout') {
       steps {
@@ -17,7 +11,6 @@ pipeline {
 
                 
             '''
-        sh 'npm install'
       }
     }
     stage('Build') {
@@ -30,7 +23,7 @@ pipeline {
         CI = 'true'
       }
       steps {
-        sh './jenkins/test.sh'
+        input 'Finished using the web site ? (Click "proceed" to continue'
       }
     }
     stage('Deploy') {
