@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Maintainers') {
           steps {
-            input '"Proceed"'
+            input(message: '"Proceed"', submitter: 'y.morgan')
           }
         }
       }
