@@ -44,7 +44,7 @@ pipeline {
         }
         stage('send a mail') {
           steps {
-            mail(body: 'This will go into the body of the mail.', subject: 'Test mail in blue ocean pipeline', from: 'malik.diouani@parrot.com', to: 'malik.diouani@parrot.com')
+            mail(body: 'This will go into the body of the mail.', subject: 'Test mail in blue ocean pipeline', from: 'diouani.malik@gmail.com', to: 'diouani.malik@gmail.com')
           }
         }
       }
