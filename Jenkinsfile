@@ -32,7 +32,7 @@ pipeline {
         CI = 'true'
       }
       steps {
-        input 'Finished using the web site ? (Click "proceed" to continue'
+        input 'Finished using the app ? (Click "proceed" to continue'
       }
     }
     stage('Deploy') {
